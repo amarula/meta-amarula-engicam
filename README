@@ -4,21 +4,27 @@
 	Yocto Support for Engicam Boards
 *************************************************
 
-This file documents the yocto support for following Engicam 
-SOM platform boards.
+This README file contains information on building the meta-engicam
+BSP layer, and booting the images contained in the /binary directory.
+Please see the corresponding sections below for details.
+
+Supported Engicam Boards
+========================
 
 GEAM6UL SOM Starter kits:
 https://www.engicam.com/vis-prod/101115
 
-i.CoreM6 Quad/Dual/DualLite/Solo RQS SOM Starter kits:
-https://www.engicam.com/vis-prod/101124
+i.CoreM6 Quad/Dual/DualLite/Solo SOM Starter kits:
+https://www.engicam.com/vis-prod/101120
 
 Is.IoT MX6UL SOM Starter kits:
 https://www.engicam.com/vis-prod/101122
 
-This README file contains information on building the meta-engicam
-BSP layer, and booting the images contained in the /binary directory.
-Please see the corresponding sections below for details.
+i.CoreM6 Quad/Dual/DualLite/Solo RQS SOM Starter kits:
+https://www.engicam.com/vis-prod/101124
+
+i.CoreM6 Quad/Dual/DualLite/Solo Open Frame 10.1 C.TOUCH kits:
+https://www.engicam.com/vis-prod/101133
 
 
 Dependencies
