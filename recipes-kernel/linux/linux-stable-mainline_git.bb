@@ -6,9 +6,9 @@ COMPATIBLE_MACHINE = "(icorem6|icorem6rqs|icorem6ctouch|geam6ul|isiot)"
 
 inherit kernel
 
-require linux.inc
-
 KBRANCH ?= "master"
+
+KERNEL_IMAGETYPE = "uImage"
 
 # Pull in the devicetree files into the rootfs
 RDEPENDS_${KERNEL_PACKAGE_NAME}-base += "kernel-devicetree"
@@ -18,12 +18,14 @@ RDEPENDS_${KERNEL_PACKAGE_NAME}-base += "kernel-devicetree"
 DEFAULT_PREFERENCE = "-1" 
 
 KERNEL_EXTRA_ARGS += "LOADADDR=${UBOOT_ENTRYPOINT}"
+
+#Using an "In-Tree" defconfig File
+KBUILD_DEFCONFIG ?= "imx_v6_v7_defconfig"
 	
 # 4.15-rc1
 PV = "4.15+git${SRCPV}"
 SRCREV_pn-${PN} = "4fbd8d194f06c8a3fd2af1ce560ddb31f7ec8323"
 
-SRC_URI = "git://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git;protocol=git;branch=master \
-        file://defconfig \
-        "
+SRC_URI = "git://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git;protocol=git;branch=master"
+
 S = "${WORKDIR}/git"
