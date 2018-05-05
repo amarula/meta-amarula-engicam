@@ -1,0 +1,11 @@
+COMPATIBLE_MACHINE_icorem6 = "icorem6"
+COMPATIBLE_MACHINE_icorem6rqs = "icorem6rqs"
+COMPATIBLE_MACHINE_icorem6ctouch = "icorem6ctouch"
+COMPATIBLE_MACHINE_geam6ul = "geam6ul"
+COMPATIBLE_MACHINE_isiot = "isiot"
+
+KBUILD_DEFCONFIG_icorem6 = "imx_v6_v7_defconfig"
+KBUILD_DEFCONFIG_icorem6rqs = "imx_v6_v7_defconfig"
+KBUILD_DEFCONFIG_icorem6ctouch = "imx_v6_v7_defconfig"
+KBUILD_DEFCONFIG_geam6ul = "imx_v6_v7_defconfig"
+KBUILD_DEFCONFIG_isiot = "imx_v6_v7_defconfig"
