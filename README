@@ -47,47 +47,39 @@ Table of Contents
   I. Building the meta-engicam BSP layer
  II. Booting the images in /binary
 
-
 I. Building the meta-engicam BSP layer
 ========================================
 
---- replace with specific instructions for your layer ---
-
 In order to build an image with BSP support for a given release, you
-need to download the corresponding BSP tarball from the 'Board Support
-Package (BSP) Downloads' page of the Yocto Project website.
+need to download the corresponding tools described in the "Dependencies"
+section. Be sure that everything is in the same directory.
 
-Having done that, and assuming you extracted the BSP tarball contents
-at the top-level of your yocto build tree, you can build a
-engicam image by adding the location of the meta-engicam
-layer to bblayers.conf, along with any other layers needed (to access
-common metadata shared between BSPs) e.g.:
+	$ mkdir yocto; cd yocto
+	~/yocto $ git clone git://git.yoctoproject.org/poky
+	~/yocto $ git clone https://github.com/chakradivi/meta-engicam.git
 
-  yocto/meta-xxxx \
-  yocto/meta-xxxx/meta-engicam \
+Then you need to source the configuration script:
 
-To enable the engicam layer, add the engicam MACHINE to local.conf:
+	~/yocto $ source poky/oe-init-build-env
 
-  MACHINE ?= "engicam"
+Now you can build an image for a engicam boards by adding the location 
+of the meta-engicam layer to bblayers.conf, along with any other layers
+needed (to access common metadata shared between BSPs)
 
-You should then be able to build a engicam image as such:
+To enable the build for a specific board, add its name in the MACHINE variable
+to local.conf:
 
-  $ source oe-init-build-env
-  $ bitbake core-image-minimal
+	MACHINE ?= "icorem6"
 
-At the end of a successful build, you should have a live image that
-you can boot from a USB flash drive (see instructions on how to do
-that below, in the section 'Booting the images from /binary').
+All supported machines can be found in meta-engicam/conf/machine.
 
-As an alternative to downloading the BSP tarball, you can also work
-directly from the meta-xxxx git repository.  For each BSP in the
-'meta-xxxx' repository, there are multiple branches, one corresponding
-to each major release starting with 'laverne' (0.90), in addition to
-the latest code which tracks the current master (note that not all
-BSPs are present in every release).  Instead of extracting a BSP
-tarball at the top level of your yocto build tree, you can
-equivalently check out the appropriate branch from the meta-xxxx
-repository at the same location.
+You should then be able to build a image as such:
+
+	~/yocto/build $ bitbake core-image-minimal
+
+At the end of a successful build, you should have an image in
+
+	tmp/deploy/images/$(MACHINE)/
 
 
 II. Booting the images in /binary
