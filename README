@@ -5,7 +5,7 @@
 *************************************************
 
 This README file contains information on building the meta-engicam
-BSP layer, and booting the images contained in the /binary directory.
+BSP layer, and booting the images generated in build directory.
 Please see the corresponding sections below for details.
 
 Supported Engicam Boards
