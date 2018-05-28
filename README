@@ -32,28 +32,14 @@ Dependencies
 
 This layer depends on:
 
-  URI: git://git.openembedded.org/bitbake
-  branch: master
-
-  URI: git://git.openembedded.org/openembedded-core
-  layers: meta
-  branch: master
-
-  URI: git://git.yoctoproject.org/xxxx
-  layers: xxxx
+  URI: git://git.yoctoproject.org/poky
   branch: master
 
 
 Patches
 =======
 
-Please submit any patches against this BSP to the Yocto mailing list
-(yocto@yoctoproject.org) and cc: the maintainer:
-
-Maintainer: XXX YYYYYY <xxx.yyyyyy@zzzzz.com>
-
-Please see the meta-xxxx/MAINTAINERS file for more details.
-
+Maintainer: Chakra Divi <chakra@openedev.com>
 
 Table of Contents
 =================
@@ -87,7 +73,7 @@ To enable the engicam layer, add the engicam MACHINE to local.conf:
 You should then be able to build a engicam image as such:
 
   $ source oe-init-build-env
-  $ bitbake core-image-sato
+  $ bitbake core-image-minimal
 
 At the end of a successful build, you should have a live image that
 you can boot from a USB flash drive (see instructions on how to do
@@ -116,7 +102,7 @@ Under Linux, insert a USB flash drive.  Assuming the USB flash drive
 takes device /dev/sdf, use dd to copy the live image to it.  For
 example:
 
-# dd if=core-image-sato-engicam-20101207053738.hddimg of=/dev/sdf
+# dd if=core-image-minimal-xxxx.wic of=/dev/sdf
 # sync
 # eject /dev/sdf
 
