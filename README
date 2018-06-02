@@ -122,6 +122,8 @@ characters), try doing this first:
 Board Testing Status:
 
 1. icorem6 - booting 
+	Quad/Dual - Booting
+	DualLite/Solo - SOM Not Available - Unable to Test
 2. icorem6rqs
 	a. DualLite/Solo RQS
 		mmc - booting
