@@ -44,9 +44,10 @@ Maintainer: Chakra Divi <chakra@openedev.com>
 Table of Contents
 =================
 
-  I. Building the meta-engicam BSP layer
- II. Booting the images in /binary
-
+  I.   Building the meta-engicam BSP layer
+  II.  Booting the images 
+  III. Board Testing Status
+  
 I. Building the meta-engicam BSP layer
 ========================================
 
@@ -82,8 +83,8 @@ At the end of a successful build, you should have an image in
 	tmp/deploy/images/$(MACHINE)/
 
 
-II. Booting the images in /binary
-=================================
+II. Booting the images 
+========================
 
 --- replace with specific instructions for your platform ---
 
@@ -119,22 +120,33 @@ characters), try doing this first:
 
 # dd if=/dev/zero of=/dev/sdf bs=1M count=512
 
-Board Testing Status:
+III. Board Testing Status
+==========================
 
 1. icorem6 - booting 
-	Quad/Dual - Booting
-	DualLite/Solo - SOM Not Available - Unable to Test
+	Quad/Dual:
+	  MMC - Booting
+	  NAND - TBD
+	DualLite/Solo:
+	  MMC - SOM Not Available - Unable to Test
+	  NAND - SOM Not Available - Unable to Test
 2. icorem6rqs
-	a. DualLite/Solo RQS
-		mmc - booting
-		emmc - SPL is not picking up the correct DTB, but if deevice 
+        Quad/Dual RQS:
+	  MMC: Booting 
+	  eMMC: Booting
+	DualLite/Solo RQS:
+	  MMC: Booting
+	  eMMC: SPL is not picking up the correct DTB, but if deevice 
 		tree is hardcoded while compiling u-boot it is working 
-		"make DEVICE_TREE=imx6dl-icore-rqs" 
-	
-	b. Quad/Dual -
-		mmc - booting 
-		emmc - booting
+		"make DEVICE_TREE=imx6dl-icore-rqs"
+3. i.CoreM6 1.5 MIPI
+    	MMC: TBD
+    	eMMC: TBD
 3. isiot - issue while booting kernel
 	u-boot booting, board hung after print "starting the kernel"
+        MMC: Issue
+	eMMC: Issue
+	NAND: Issue
 4. geam6ul - issue in uboot
-	
+        MMC:  Issue
+	NAND: Issue
