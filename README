@@ -118,3 +118,21 @@ the syslinux boot: prompt, or the boot: prompt contains strange
 characters), try doing this first:
 
 # dd if=/dev/zero of=/dev/sdf bs=1M count=512
+
+Board Testing Status:
+
+1. icorem6 - booting 
+2. icorem6rqs
+	a. DualLite/Solo RQS
+		mmc - booting
+		emmc - SPL is not picking up the correct DTB, but if deevice 
+		tree is hardcoded while compiling u-boot it is working 
+		"make DEVICE_TREE=imx6dl-icore-rqs" 
+	
+	b. Quad/Dual -
+		mmc - booting 
+		emmc - booting
+3. isiot - issue while booting kernel
+	u-boot booting, board hung after print "starting the kernel"
+4. geam6ul - issue in uboot
+	
