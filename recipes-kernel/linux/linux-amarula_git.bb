@@ -15,7 +15,7 @@ SRC_URI = "git://github.com/amarula/linux-amarula.git;branch=imx6"
 S = "${WORKDIR}/git"
 
 LINUX_VERSION ?= "4.17.0-rc5"
-SRCREV ?= "${AUTOREV}"
+SRCREV ?= "d2ca44c0dc37077a5d62c95c3731593796bff6d7"
 PV = "${LINUX_VERSION}+git${SRCPV}"
 
 inherit kernel
