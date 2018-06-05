@@ -3,6 +3,9 @@
 # moved to mainline stable kernel will migrate to mainline
 # till then use development Kernel
 
+inherit kernel
+require recipes-kernel/linux/linux-yocto.inc
+
 FILESEXTRAPATHS_prepend := "${THISDIR}/${PN}-${PV}:"
 
 DESCRIPTION = "Amarula Dev Linux Kernel"
@@ -10,16 +13,13 @@ SECTION = "kernel"
 LICENSE = "GPLv2"
 
 LIC_FILES_CHKSUM = "file://COPYING;md5=bbea815ee2795b2f4230826c0c6b8814"
-SRC_URI = "git://github.com/amarula/linux-amarula.git;branch=imx6"
+SRC_URI = "git://github.com/amarula/linux-amarula.git;branch=imx6-yocto"
 
 S = "${WORKDIR}/git"
 
 LINUX_VERSION ?= "4.17.0-rc5"
-SRCREV ?= "d2ca44c0dc37077a5d62c95c3731593796bff6d7"
+SRCREV ?= "${AUTOREV}"
 PV = "${LINUX_VERSION}+git${SRCPV}"
-
-inherit kernel
-require recipes-kernel/linux/linux-yocto.inc
 
 KCONF_BSP_AUDIT_LEVEL = "0"
 deltask kernel_configme

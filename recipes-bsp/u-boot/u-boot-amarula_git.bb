@@ -9,7 +9,7 @@ DESCRIPTION = "Amarula dev U-Boot"
 COMPATIBLE_MACHINE = "(icorem6|icorem6mipi|icorem6rqs|icorem6ctouch|geam6ul|isiot)"
 
 DEPENDS = "dtc-native bc-native"
-SRC_URI = "git://github.com/amarula/u-boot-amarula.git;branch=imx6;"
+SRC_URI = "git://github.com/amarula/u-boot-amarula.git;branch=imx6-yocto;"
 SRCREV = "${AUTOREV}"
 
 PV = "v2018.05+git${SRCPV}"
