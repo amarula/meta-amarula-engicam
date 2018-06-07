@@ -140,8 +140,12 @@ III. Board Testing Status
 		tree is hardcoded while compiling u-boot it is working 
 		"make DEVICE_TREE=imx6dl-icore-rqs"
 3. i.CoreM6 1.5 MIPI
-    	MMC: TBD
-    	eMMC: TBD
+	a) i.CoreM6 Quad/Dual MIPI SOM:
+    		MMC: Booting ( used linux-amarula and uboot-amarula)
+    		eMMC: Booting ( used linux-amarula and uboot-amarula)
+	b) DualLite/Solo MIPI SOM:
+		MMC: TBD
+		eMMC: TBD
 3. isiot - issue while booting kernel
 	u-boot booting, board hung after print "starting the kernel"
         MMC: Issue
