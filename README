@@ -143,9 +143,9 @@ III. Board Testing Status
 	a) i.CoreM6 Quad/Dual MIPI SOM:
     		MMC: Booting ( used linux-amarula and uboot-amarula)
     		eMMC: Booting ( used linux-amarula and uboot-amarula)
-	b) DualLite/Solo MIPI SOM:
-		MMC: TBD
-		eMMC: TBD
+	b) i.CoreM6 DualLite/Solo MIPI
+		MMC: Booting ( used linux-amarula and uboot-amarula)
+		eMMC: Booting ( used linux-amarula and uboot-amarula)
 3. isiot - issue while booting kernel
 	u-boot booting, board hung after print "starting the kernel"
         MMC: Issue
