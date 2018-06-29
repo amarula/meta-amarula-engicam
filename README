@@ -125,15 +125,21 @@ III. Board Testing Status
 
 1. icorem6 - booting 
 	Quad/Dual:
-	  MMC - Booting
+	  MMC - Booting with linux-amarula and main line kernel
 	  NAND - TBD
+Testing Status:
+	Networking is working well in Linux, but in Uboot Ping from Board to Host PC is working but not vice versa
+	TFTP transfer is uboot is working
 	DualLite/Solo:
 	  MMC - SOM Not Available - Unable to Test
 	  NAND - SOM Not Available - Unable to Test
 2. icorem6rqs
         Quad/Dual RQS:
-	  MMC: Booting 
-	  eMMC: Booting
+	  MMC: Booting with main line kernel ( Issue with linux-amarula imx6-yocto branch )
+	  eMMC: Booting with main line kernel ( Issue with linux-amarula imx6-yocto branch )
+Testing Status: Issue with ethernet interface
+	Ethernet is not getting deducted in Uboot. In kernel, while assinging IP addr it says attaching PHY is getting failed.
+	Need to fix the issue
 	DualLite/Solo RQS:
 	  MMC: Booting
 	  eMMC: SPL is not picking up the correct DTB, but if deevice 
@@ -146,11 +152,22 @@ III. Board Testing Status
 	b) i.CoreM6 DualLite/Solo MIPI
 		MMC: Booting ( used linux-amarula and uboot-amarula)
 		eMMC: Booting ( used linux-amarula and uboot-amarula)
+Testing Status: Issue with ethernet interface
+	Ethernet is not getting deducted in Uboot. In kernel, while assinging IP addr it says attaching PHY is getting failed.
+	Need to fix the issue
+	
 3. isiot - issue while booting kernel
 	u-boot booting, board hung after print "starting the kernel"
-        MMC: Issue
-	eMMC: Issue
-	NAND: Issue
+        MMC: Booting with patches (i) and (ii) applying on the kernel 
+	eMMC: Booting with patches (i) and (ii) applying on the kernel 
+	NAND: TBD
+	(i) https://patchwork.kernel.org/patch/10445059/
+	(ii) https://patchwork.kernel.org/patch/10445053/
+	
+Testing Status: Issue with ethernet interface
+	Ethernet is not getting deducted in Uboot. In kernel, while assinging IP addr it says attaching PHY is getting failed.
+	Need to fix the issue
+	
 4. geam6ul - issue in uboot
         MMC:  Issue
 	NAND: Issue
