@@ -1,5 +1,3 @@
-
-
 *************************************************
 	Yocto Support for Engicam Boards
 *************************************************
@@ -123,51 +121,35 @@ characters), try doing this first:
 III. Board Testing Status
 ==========================
 
-1. icorem6 - booting 
-	Quad/Dual:
-	  MMC - Booting with linux-amarula and main line kernel
-	  NAND - TBD
-Testing Status:
-	Networking is working well in Linux, but in Uboot Ping from Board to Host PC is working but not vice versa
-	TFTP transfer is uboot is working
-	DualLite/Solo:
-	  MMC - SOM Not Available - Unable to Test
-	  NAND - SOM Not Available - Unable to Test
+1. icorem6:
+   i.MX6 Quad/Dual/Solo/DualLite SOMs
+   - Boot from MMC, OK
+   - Boot from NAND, OK
+   - Ethernet, OK
+
 2. icorem6rqs
-        Quad/Dual RQS:
-	  MMC: Booting with main line kernel ( Issue with linux-amarula imx6-yocto branch )
-	  eMMC: Booting with main line kernel ( Issue with linux-amarula imx6-yocto branch )
-Testing Status: Issue with ethernet interface
-	Ethernet is not getting deducted in Uboot. In kernel, while assinging IP addr it says attaching PHY is getting failed.
-	Need to fix the issue
-	DualLite/Solo RQS:
-	  MMC: Booting
-	  eMMC: SPL is not picking up the correct DTB, but if deevice 
-		tree is hardcoded while compiling u-boot it is working 
-		"make DEVICE_TREE=imx6dl-icore-rqs"
+   i.MX6 Quad/Dual/Solo/DualLite SOMs
+   - For Solo/DualLite, build u-boot "make DEVICE_TREE=imx6dl-icore-rqs" since
+     SPL is not picking up the correct DTB, but if deevice tree is hardcoded it's, OK
+   - Boot from MMC, OK
+   - Boot from eMMC, OK
+   - Ethernet, NotOK
+
 3. i.CoreM6 1.5 MIPI
-	a) i.CoreM6 Quad/Dual MIPI SOM:
-    		MMC: Booting ( used linux-amarula and uboot-amarula)
-    		eMMC: Booting ( used linux-amarula and uboot-amarula)
-	b) i.CoreM6 DualLite/Solo MIPI
-		MMC: Booting ( used linux-amarula and uboot-amarula)
-		eMMC: Booting ( used linux-amarula and uboot-amarula)
-Testing Status: Issue with ethernet interface
-	Ethernet is not getting deducted in Uboot. In kernel, while assinging IP addr it says attaching PHY is getting failed.
-	Need to fix the issue
+   i.MX6 Quad/Dual/Solo/DualLite 1.5 SOMs
+   - Boot from MMC, OK
+   - Boot from eMMC, OK
+   - Ethernet, NotOK
 	
 3. isiot - issue while booting kernel
-	u-boot booting, board hung after print "starting the kernel"
-        MMC: Booting with patches (i) and (ii) applying on the kernel 
-	eMMC: Booting with patches (i) and (ii) applying on the kernel 
-	NAND: TBD
-	(i) https://patchwork.kernel.org/patch/10445059/
-	(ii) https://patchwork.kernel.org/patch/10445053/
-	
-Testing Status: Issue with ethernet interface
-	Ethernet is not getting deducted in Uboot. In kernel, while assinging IP addr it says attaching PHY is getting failed.
-	Need to fix the issue
+   i.MX6UL eMMC/NAND SOMs
+   - Boot from MMC, OK
+   - Boot from eMMC, OK
+   - Boot from NAND, OK
+   - Ethernet, NotOK
 	
 4. geam6ul - issue in uboot
-        MMC:  Issue
-	NAND: Issue
+   i.MX6UL SOMs
+   - Boot from MMC, OK
+   - Boot from NAND, OK
+   - Ethernet, NotOK
