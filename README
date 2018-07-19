@@ -33,11 +33,12 @@ This layer depends on:
   URI: git://git.yoctoproject.org/poky
   branch: master
 
-
 Patches
 =======
 
-Maintainer: Chakra Divi <chakra@openedev.com>
+Maintainers:
+- Chakra Divi <chakra@openedev.com>
+- Jagan Teki <jagan@amarulasolutions.com>
 
 Table of Contents
 =================
