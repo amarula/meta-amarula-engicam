@@ -17,7 +17,7 @@ SRC_URI = "git://github.com/amarula/linux-amarula.git;branch=imx6-yocto"
 
 S = "${WORKDIR}/git"
 
-LINUX_VERSION ?= "4.17.0-rc5"
+LINUX_VERSION ?= "4.18.0-rc5"
 SRCREV ?= "${AUTOREV}"
 PV = "${LINUX_VERSION}+git${SRCPV}"
 
